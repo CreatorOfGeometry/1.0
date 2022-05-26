@@ -535,6 +535,10 @@ a {
 
 /* form */
 
+.send {
+  height: auto;
+}
+
 .ui-form {
   max-width: 350px;
   padding: 80px 30px 30px;
