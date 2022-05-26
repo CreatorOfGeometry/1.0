@@ -244,7 +244,7 @@ formAllInpt[0].addEventListener("keyup", (e) => {
     btn.classList.remove("inputError"); //Добавляем подсказку что данные не введены
     form_question[0].classList.remove("inputError"); //убираем подсказку на инпут что данные не введены
   } else {
-    alert(2222);
+    alert(3333);
     btn.classList.add("disabled"); // появляется disabled
     form_question[0].classList.add("inputError"); //Добавляем подсказку на инпут что данные не введены
   }
