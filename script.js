@@ -31,7 +31,7 @@ let onPhopeInput = (e) => {
     //Russian numbers
     if (inputNumbersValue[0] == "9")
       inputNumbersValue = "+" + inputNumbersValue;
-    let firstSimbols = inputNumbersValue[0] == "8" ? "8" : "+7";
+    let firstSimbols = inputNumbersValue[0] == "8" ? " 8" : "+7";
     formattedInputValue = firstSimbols + " ";
     if (inputNumbersValue.length > 1) {
       formattedInputValue += "(" + inputNumbersValue.substring(1, 4);
@@ -233,25 +233,22 @@ for (let i = 1; i < formAllEl.length - 1; i++) {
   formAllEl[i].style.display = "none";
 }
 
-formAllInpt[0].addEventListener("keyup", (e) => {
+formAllInpt[0].addEventListener("keyup", () => {
   //При начале ввода города
-  e.path[0].value = e.path[0].value.replace(/ /g, ""); // Удаляем пробелы...
-  alert(1111);
-  if (e.path[0].value.length) {
-    alert(2222);
+  formAllInpt[0].value = formAllInpt[0].value.replace(/ /g, ""); // Удаляем пробелы...
+  if (formAllInpt[0].value.length) {
     //если инпут не пустой\
     btn.classList.remove("disabled"); // появляется кнопка "Далее"
     btn.classList.remove("inputError"); //Добавляем подсказку что данные не введены
     form_question[0].classList.remove("inputError"); //убираем подсказку на инпут что данные не введены
   } else {
-    alert(3333);
     btn.classList.add("disabled"); // появляется disabled
     form_question[0].classList.add("inputError"); //Добавляем подсказку на инпут что данные не введены
   }
 });
 
 [formAllInpt[1], formAllInpt[2]].forEach((el) =>
-  el.addEventListener("keyup", (e) => {
+  el.addEventListener("keyup", () => {
     //При начале ввода номера
     btn.value = "Отправить";
     formAllInpt[1].value = formAllInpt[1].value.replace(/ /g, "");
