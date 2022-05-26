@@ -236,6 +236,7 @@ for (let i = 1; i < formAllEl.length - 1; i++) {
 formAllInpt[0].addEventListener("keyup", (e) => {
   //При начале ввода города
   e.path[0].value = e.path[0].value.replace(/ /g, ""); // Удаляем пробелы...
+   alert(122222)
   alert(e)
   if (e.path[0].value.length) {
     //если инпут не пустой\
