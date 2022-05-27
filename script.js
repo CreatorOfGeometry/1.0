@@ -284,7 +284,8 @@ function radioSelection() {
             // radioBtns[i].removeAttribute("checked");
           }
         }
-        if (e.path[0].localName == "input") {
+        if (e.target.localName == "input") {
+          // Проверка что клик на инпуте
           btn.classList.remove("inputError"); //убираем подсказку что данные не введены
           btn.classList.remove("disabled"); //показать кнопку только если мы нажимаем на инпут
         }
