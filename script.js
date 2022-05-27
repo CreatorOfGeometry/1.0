@@ -235,7 +235,7 @@ for (let i = 1; i < formAllEl.length - 1; i++) {
 
 formAllInpt[0].addEventListener("keyup", () => {
   //При начале ввода города
-  formAllInpt[0].value = formAllInpt[0].value.replace(/ /g, ""); // Удаляем пробелы...
+  formAllInpt[0].value = formAllInpt[0].value.replace(/^\s+/g, ""); // Удаляем первый пробел...
   if (formAllInpt[0].value.length) {
     //если инпут не пустой\
     btn.classList.remove("disabled"); // появляется кнопка "Далее"
@@ -251,7 +251,7 @@ formAllInpt[0].addEventListener("keyup", () => {
   el.addEventListener("keyup", () => {
     //При начале ввода номера
     btn.value = "Отправить";
-    formAllInpt[1].value = formAllInpt[1].value.replace(/ /g, "");
+    formAllInpt[0].value = formAllInpt[0].value.replace(/^\s+/g, ""); // Удаляем первый пробел...
     if (formAllInpt[2].value.length > 17 && formAllInpt[1].value.length > 0) {
       //если инпут заполнен
       btn.classList.remove("disabled"); // появляется кнопка "Отправить"
@@ -327,7 +327,7 @@ function sendForm() {
   Название населенного пункта: <b>${answers[0]}.</b>
   Где планирует делать ремонт: <b>${answers[1]}.</b>
   Нужен ли дизайн проект: <b>${answers[2]}.</b>
-  общая рлощадь квартиры(примерно): <b>${answers[3]}.</b>
+  Общая площадь квартиры(примерно): <b>${answers[3]}.</b>
   Количество комнат: <b>${answers[4]}.</b>
   Сегмент ремонта: <b>${answers[5]}.</b>
   Бюджет: <b>${answers[6]}.</b>
