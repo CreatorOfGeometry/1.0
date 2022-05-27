@@ -655,7 +655,7 @@ a {
 
 @media (max-width: 767px) {
   .send h3 {
-    margin: 150px 0 0 0;
+    margin: 150px 0;
     text-align: center;
     font-size: 28px;
   }
