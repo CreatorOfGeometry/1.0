@@ -123,8 +123,8 @@ const el = document.querySelector(".greet_geometry"); // Получаем наш
 
 let scaleRepeat = setInterval(() => {
   el.style.top =
-    window.innerHeight * (window.innerHeight > 700 ? 1.55 : 1.85) + "px";
-  el.style.left = window.innerWidth / (window.innerWidth > 1500 ? 3 : 4) + "px";
+    window.innerHeight * (window.innerHeight > 700 ? 1.65 : 1.85) + "px";
+  el.style.left = window.innerWidth / (window.innerWidth > 1500 ? 5 : 4) + "px";
 
   document.querySelector(".pointer").style.transform = "scale(1)";
   setTimeout(() => {
