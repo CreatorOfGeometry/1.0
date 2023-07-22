@@ -121,11 +121,10 @@ document
 // /* greet */
 const el = document.querySelector(".greet_geometry"); // Получаем наш блок
 
-let scaleRepeat = setInterval(() => {
-  el.style.top =
-    window.innerHeight * (window.innerHeight > 700 ? 1.65 : 1.85) + "px";
-  el.style.left = window.innerWidth / (window.innerWidth > 1500 ? 5 : 4) + "px";
+el.style.top = window.innerHeight * (window.innerHeight > 700 ? 1.75 : 1.85) + "px";
+el.style.left = window.innerWidth / (window.innerWidth > 1500 ? 5 : 4) + "px";
 
+let scaleRepeat = setInterval(() => {
   document.querySelector(".pointer").style.transform = "scale(1)";
   setTimeout(() => {
     document.querySelector(".pointer").style.transform = "scale(1.2)";
@@ -269,28 +268,28 @@ formAllInpt[0].addEventListener("keyup", () => {
 function radioSelection() {
   document
     .querySelectorAll(".form_radio_group")
-    [visibleForm ? visibleForm - 1 : visibleForm].addEventListener(
-      "click",
-      (e) => {
-        for (let i = 0; i < radioBtns.length; i++) {
-          if (radioBtns[i].checked) {
-            radioBtns[i].classList.add("active");
-            answers[visibleForm] = document.querySelector(
-              `label[for="${radioBtns[i].id}"]`
-            ).innerHTML;
-            // radioBtns[i].setAttribute("checked", "true");
-          } else {
-            radioBtns[i].classList.remove("active");
-            // radioBtns[i].removeAttribute("checked");
-          }
-        }
-        if (e.target.localName == "input") {
-          // Проверка что клик на инпуте
-          btn.classList.remove("inputError"); //убираем подсказку что данные не введены
-          btn.classList.remove("disabled"); //показать кнопку только если мы нажимаем на инпут
+  [visibleForm ? visibleForm - 1 : visibleForm].addEventListener(
+    "click",
+    (e) => {
+      for (let i = 0; i < radioBtns.length; i++) {
+        if (radioBtns[i].checked) {
+          radioBtns[i].classList.add("active");
+          answers[visibleForm] = document.querySelector(
+            `label[for="${radioBtns[i].id}"]`
+          ).innerHTML;
+          // radioBtns[i].setAttribute("checked", "true");
+        } else {
+          radioBtns[i].classList.remove("active");
+          // radioBtns[i].removeAttribute("checked");
         }
       }
-    );
+      if (e.target.localName == "input") {
+        // Проверка что клик на инпуте
+        btn.classList.remove("inputError"); //убираем подсказку что данные не введены
+        btn.classList.remove("disabled"); //показать кнопку только если мы нажимаем на инпут
+      }
+    }
+  );
 }
 
 btn.addEventListener("click", () => {
